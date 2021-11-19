@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No Youtube Autoplay - Next video button disable / disabled
 // @namespace    YoutubeNoAutoplay
-// @version      4.0.3
+// @version      4.0.4
 // @description  Automatically switch off the autoplay next video button on Youtube
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_no_autoplay.user.js
