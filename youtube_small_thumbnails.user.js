@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Small Thumbnails - Normal Size
 // @namespace    YoutubeSmallThumbnails
-// @version      1.1.1
+// @version      1.1.2
 // @description  Shrink ugly huge thumbnails
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_small_thumbnails.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_small_thumbnails.user.js
