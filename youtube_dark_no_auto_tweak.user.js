@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay Tweak
-// @namespace    RansNoAutoplayDarkTheme
+// @namespace    NoAutoplayDarkTheme
 // @version      1.1.5
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
