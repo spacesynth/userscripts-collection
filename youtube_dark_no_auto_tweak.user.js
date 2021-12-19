@@ -73,15 +73,20 @@ function gensokyo() {
     }
 };
 
+function gensokyo2() {
 document.addEventListener("visibilitychange", function() {
-    if (document.visibilityState === 'visible' && fired < 2) {
+    if (document.visibilityState === 'visible' && fired < 1) {
         console.log("fired!");
-        fired = 2;
+        fired += 1;
         var player = document.getElementById("movie_player")
+        setTimeout(function(){
         player.playVideo();
+            }, 1000);
     }
 });
+}
 
 var refreshIntervalId = setInterval(gensokyo, 1000);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
+gensokyo2();
