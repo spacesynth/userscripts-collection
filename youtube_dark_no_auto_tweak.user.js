@@ -15,15 +15,21 @@
 // @noframes
 // ==/UserScript==
 
-var nameP = 'PREF'
-var enableDark = '&f6=400'
-var disableAutoplay = '&f5=30000'
-var isDark = false, noAutoplay = false;//do not edit
+var fired = 0,
+    nameP = 'PREF',
+    enableUS = '&gl=US',
+    enableDark = '&f6=400',
+    enablePhoenix = '&tz=America.Phoenix',
+    disableAutoplay = '&f5=30000',
+    isDark = false,
+    noAutoplay = false,
+    isEnglish = false,
+    isPhoenix = false; //do not edit
 
-function gensokyo(){
-    document.cookie = 'CONSENT=YES+yt.392524409.en+FX+018;  path=/; domain=.youtube.com';
-    if (document.cookie.match(/^(.*;)?\s*PREF\s*=\s*[^;]+(.*)?$/) === null){
-        document.cookie = 'PREF=gl=US&f5=30000&f6=400;  path=/; domain=.youtube.com';
+function gensokyo() {
+    document.cookie = 'CONSENT=YES+yt.416317000.en+FX+363;  path=/; domain=.youtube.com';
+    if (document.cookie.match(/^(.*;)?\s*PREF\s*=\s*[^;]+(.*)?$/) === null) {
+        document.cookie = 'PREF=tz=America.Phoenix&gl=US&f5=30000&f6=400;  path=/; domain=.youtube.com';
     }
     var matchA = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
     if (matchA[2].includes('f5=20000') === true) {
@@ -32,8 +38,8 @@ function gensokyo(){
     } else if (matchA[2].includes('f5=30000') == false) {
         document.cookie = 'PREF=' + matchA[2] + disableAutoplay + ';  path=/; domain=.youtube.com';
     } else {
-        isDark = true;//only set if cookie 1 change worked
-}
+        isDark = true; //only set if cookie 1 change worked
+    }
     var matchB = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
     if (matchB[2].includes('f6=80000') === true) {
         var newstr2 = matchB[2].replace(/f6=80000/, "f6=400");
@@ -41,22 +47,47 @@ function gensokyo(){
     } else if (matchB[2].includes('f6=400') === false) {
         document.cookie = 'PREF=' + matchB[2] + enableDark + ';  path=/; domain=.youtube.com';
     } else {
-        noAutoplay = true;//only set if cookie 2 change worked
+        noAutoplay = true; //only set if cookie 2 change worked
     }
-    if (isDark === true && noAutoplay === true) {
-        console.log("S ALL GOOD MAN!")
+    var matchC = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
+    if (matchC[2].includes('gl=US') == false) {
+        document.cookie = 'PREF=' + matchC[2] + enableUS + ';  path=/; domain=.youtube.com';
+    } else {
+        isEnglish = true; //only set if cookie 3 change worked
+    }
+    var matchD = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
+    if (matchD[2].includes('tz=Europe.Berlin') === true) {
+        var newstr3 = matchD[2].replace(/tz=Europe\.Berlin/, "tz=America.Phoenix");
+        document.cookie = 'PREF=' + newstr3 + ';  path=/; domain=.youtube.com';
+    } else if (matchD[2].includes('tz=America.Phoenix') == false) {
+        document.cookie = 'PREF=' + matchD[2] + enablePhoenix + ';  path=/; domain=.youtube.com';
+    } else {
+        isPhoenix = true; //only set if cookie 4 change worked
+    }
+    if (isDark === true && noAutoplay === true && isEnglish == true) {
+        console.log(isDark, noAutoplay, isEnglish, isPhoenix, "S ALL GOOD MAN!")
         clearInterval(refreshIntervalId);
     } else {
         location.reload();
-        var element2 = document.querySelector("[aria-label='Play (k)']");
-        if (element2 != undefined){
-            for (let z = 0; z < 10; z++) {
-                element2.click();
-            }
-        }
         console.log("reloading!");
     }
 };
+
+document.addEventListener("visibilitychange", function() {
+    if (document.visibilityState === 'visible') {
+        console.log("fired!");
+        if (fired == 0) {
+            fired = 1;
+            var element2 = document.querySelector("[aria-label='Play (k)']");
+            if (element2 != undefined) {
+                for (let z = 0; z < 10; z++) {
+                    element2.click();
+                }
+            }
+        }
+    }
+});
+
 var refreshIntervalId = setInterval(gensokyo, 1000);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
