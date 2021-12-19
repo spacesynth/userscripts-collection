@@ -61,16 +61,15 @@ function gensokyo() {
 
 function gensokyo2() {
     var player = document.getElementById("movie_player")
-        if (document.visibilityState === 'visible' && fired < 1) {
-            if (player.getPlayerState() == 1) {
-                fired += 1;
-                clearInterval(refreshIntervalId2);
-                console.log("fired!");
-            } else if (player.getPlayerState() != 1) {
-                player.playVideo();
-            }
+    if (document.visibilityState === 'visible' && fired < 1) {
+        if (player.getPlayerState() == 1) {
+            fired += 1;
+            clearInterval(refreshIntervalId2);
+            console.log("fired!");
+        } else if (player.getPlayerState() != 1) {
+            player.playVideo();
         }
-
+    }
 };
 
 var refreshIntervalId = setInterval(gensokyo, 1000);
