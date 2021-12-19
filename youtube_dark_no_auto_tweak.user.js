@@ -26,6 +26,7 @@ var fired = 0,
     isEnglish = false; //do not edit
 
 function gensokyo() {
+    document.cookie = 'CONSENT=YES+yt.416848408.en+FX+243;  path=/; domain=.youtube.com';
     var matchA = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
     if (matchA[2].includes('f5=20000') === true) {
         var newstr = matchA[2].replace(/f5=20000/, "f5=30000");
