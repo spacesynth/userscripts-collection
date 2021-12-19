@@ -15,22 +15,17 @@
 // @noframes
 // ==/UserScript==
 
+'use strict'
 var fired = 0,
     nameP = 'PREF',
     enableUS = '&gl=US',
     enableDark = '&f6=400',
-    enablePhoenix = '&tz=America.Phoenix',
     disableAutoplay = '&f5=30000',
     isDark = false,
     noAutoplay = false,
-    isEnglish = false,
-    isPhoenix = false; //do not edit
+    isEnglish = false; //do not edit
 
 function gensokyo() {
-    document.cookie = 'CONSENT=YES+yt.416317000.en+FX+363;  path=/; domain=.youtube.com';
-    if (document.cookie.match(/^(.*;)?\s*PREF\s*=\s*[^;]+(.*)?$/) === null) {
-        document.cookie = 'PREF=tz=America.Phoenix&gl=US&f5=30000&f6=400;  path=/; domain=.youtube.com';
-    }
     var matchA = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
     if (matchA[2].includes('f5=20000') === true) {
         var newstr = matchA[2].replace(/f5=20000/, "f5=30000");
@@ -55,17 +50,8 @@ function gensokyo() {
     } else {
         isEnglish = true; //only set if cookie 3 change worked
     }
-    var matchD = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
-    if (matchD[2].includes('tz=Europe.Berlin') === true) {
-        var newstr3 = matchD[2].replace(/tz=Europe\.Berlin/, "tz=America.Phoenix");
-        document.cookie = 'PREF=' + newstr3 + ';  path=/; domain=.youtube.com';
-    } else if (matchD[2].includes('tz=America.Phoenix') == false) {
-        document.cookie = 'PREF=' + matchD[2] + enablePhoenix + ';  path=/; domain=.youtube.com';
-    } else {
-        isPhoenix = true; //only set if cookie 4 change worked
-    }
     if (isDark === true && noAutoplay === true && isEnglish == true) {
-        console.log(isDark, noAutoplay, isEnglish, isPhoenix, "S ALL GOOD MAN!")
+        console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
         clearInterval(refreshIntervalId);
     } else {
         location.reload();
@@ -74,19 +60,20 @@ function gensokyo() {
 };
 
 function gensokyo2() {
-document.addEventListener("visibilitychange", function() {
-    if (document.visibilityState === 'visible' && fired < 1) {
-        console.log("fired!");
-        fired += 1;
-        var player = document.getElementById("movie_player")
-        setTimeout(function(){
-        player.playVideo();
-            }, 1000);
-    }
-});
-}
+    var player = document.getElementById("movie_player")
+        if (document.visibilityState === 'visible' && fired < 1) {
+            if (player.getPlayerState() == 1) {
+                fired += 1;
+                clearInterval(refreshIntervalId2);
+                console.log("fired!");
+            } else if (player.getPlayerState() != 1) {
+                player.playVideo();
+            }
+        }
+
+};
 
 var refreshIntervalId = setInterval(gensokyo, 1000);
+var refreshIntervalId2 = setInterval(gensokyo2, 100);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
-gensokyo2();
