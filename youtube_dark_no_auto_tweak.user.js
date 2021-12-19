@@ -74,17 +74,11 @@ function gensokyo() {
 };
 
 document.addEventListener("visibilitychange", function() {
-    if (document.visibilityState === 'visible') {
+    if (document.visibilityState === 'visible' && fired < 2) {
         console.log("fired!");
-        if (fired == 0) {
-            fired = 1;
-            var element2 = document.querySelector("[aria-label='Play (k)']");
-            if (element2 != undefined) {
-                for (let z = 0; z < 10; z++) {
-                    element2.click();
-                }
-            }
-        }
+        fired = 2;
+        var player = document.getElementById("movie_player")
+        player.playVideo();
     }
 });
 
