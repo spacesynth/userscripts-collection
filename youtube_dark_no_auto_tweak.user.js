@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay Tweak
-// @namespace    NoAutoplayDarkThemeTweak
-// @version      1.1.8
+// @namespace    vw9YouTubeDarkThemeNoAutoplayTweak
+// @version      1.1.9
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
@@ -17,7 +17,7 @@
 // @noframes
 // ==/UserScript==
 
-'use strict'
+'use strict';
 var fired = 0,
     nameP = 'PREF',
     enableUS = '&gl=US',
@@ -64,13 +64,15 @@ function gensokyo() {
 
 function gensokyo2() {
     var player = document.getElementById("movie_player")
-    if (document.visibilityState === 'visible' && fired < 1) {
-        if (player.getPlayerState() == 1) {
-            fired += 1;
-            clearInterval(refreshIntervalId2);
-            console.log("fired!");
-        } else if (player.getPlayerState() != 1) {
-            player.playVideo();
+    if (player != null) {
+        if (document.visibilityState === 'visible' && fired < 1) {
+            if (player.getPlayerState() == 1) {
+                fired += 1;
+                clearInterval(refreshIntervalId2);
+                console.log("fired!");
+            } else if (player.getPlayerState() != 1) {
+                player.playVideo();
+            }
         }
     }
 };
@@ -78,7 +80,7 @@ function gensokyo2() {
 function gensokyo3() {
     var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
     if (element1 != undefined) {
-        if (element1.getAttribute("style") != "display: none;") {
+        if (element1[0].getAttribute("style") != "display: none;") {
             element1[0].click();
         }
     }
@@ -87,13 +89,12 @@ function gensokyo3() {
 
 function gensokyo4() {
     var elms = document.getElementsByClassName("ytp-autonav-toggle-button");
-    for (var i = 0; i < elms.length; i++) {
-        if (elms[i].getAttribute("aria-checked") == "true") {
-            elms[i].setAttribute("aria-checked", false);
+    if (elms != undefined) {
+        if (elms[0].getAttribute("aria-checked") == "true") {
+            elms[0].setAttribute("aria-checked", false);
         }
     }
 }
-
 waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
 var refreshIntervalId = setInterval(gensokyo, 1000);
 var refreshIntervalId2 = setInterval(gensokyo2, 100);
