@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay Tweak
 // @namespace    NoAutoplayDarkThemeTweak
-// @version      1.1.7
+// @version      1.1.8
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
@@ -78,7 +78,9 @@ function gensokyo2() {
 function gensokyo3() {
     var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
     if (element1 != undefined) {
-        element1[0].click();
+        if (element1.getAttribute("style") != "display: none;") {
+            element1[0].click();
+        }
     }
     return true;
 }
