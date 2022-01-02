@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay Tweak
 // @namespace    NoAutoplayDarkThemeTweak
-// @version      1.1.5
+// @version      1.1.6
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
@@ -11,6 +11,8 @@
 // @run-at       document-start
 // @grant        none
 // @license      WTFPL
+// @require      https://code.jquery.com/jquery-1.7.2.min.js
+// @require      https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/waitForKeyElements.js
 // @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
 // @noframes
 // ==/UserScript==
@@ -73,6 +75,15 @@ function gensokyo2() {
     }
 };
 
+function gensokyo3() {
+        var element1 = document.querySelectorAll("[aria-label^='Delete activity item']");
+        if (element1 != undefined){
+            element1[0].click();
+        }
+    return true;
+}
+
+waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
 var refreshIntervalId = setInterval(gensokyo, 1000);
 var refreshIntervalId2 = setInterval(gensokyo2, 100);
 window.addEventListener("yt-navigate-finish", gensokyo);
