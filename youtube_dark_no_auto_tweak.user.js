@@ -95,6 +95,6 @@ function gensokyo4() {
 waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
 var refreshIntervalId = setInterval(gensokyo, 1000);
 var refreshIntervalId2 = setInterval(gensokyo2, 100);
-var refreshIntervalId3 = setInterval(gensokyo4, 100);
+var refreshIntervalId3 = setInterval(gensokyo4, 1000);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
