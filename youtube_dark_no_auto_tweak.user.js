@@ -76,7 +76,7 @@ function gensokyo2() {
 };
 
 function gensokyo3() {
-        var element1 = document.querySelectorAll("[aria-label^='Delete activity item']");
+        var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
         if (element1 != undefined){
             element1[0].click();
         }
