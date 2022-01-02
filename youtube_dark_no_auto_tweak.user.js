@@ -76,19 +76,20 @@ function gensokyo2() {
 };
 
 function gensokyo3() {
-        var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
-        if (element1 != undefined){
-            element1[0].click();
-        }
+    var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
+    if (element1 != undefined) {
+        element1[0].click();
+    }
     return true;
 }
 
 function gensokyo4() {
-        var elms=document.getElementsByClassName("ytp-autonav-toggle-button");
-    for (var i=0;i<elms.length;i++){
-    if(elms[i].getAttribute("aria-checked")=="true"){
-        elms[i].setAttribute("aria-checked", false);}
-}
+    var elms = document.getElementsByClassName("ytp-autonav-toggle-button");
+    for (var i = 0; i < elms.length; i++) {
+        if (elms[i].getAttribute("aria-checked") == "true") {
+            elms[i].setAttribute("aria-checked", false);
+        }
+    }
 }
 
 waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
