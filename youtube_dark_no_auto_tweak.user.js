@@ -79,7 +79,7 @@ function gensokyo2() {
 
 function gensokyo3() {
     var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
-    if (element1 != undefined) {
+    if (element1[0] != undefined) {
         if (element1[0].getAttribute("style") != "display: none;") {
             element1[0].click();
         }
@@ -89,7 +89,7 @@ function gensokyo3() {
 
 function gensokyo4() {
     var elms = document.getElementsByClassName("ytp-autonav-toggle-button");
-    if (elms != undefined) {
+    if (elms[0] != undefined) {
         if (elms[0].getAttribute("aria-checked") == "true") {
             elms[0].setAttribute("aria-checked", false);
         }
