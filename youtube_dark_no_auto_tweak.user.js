@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay Tweak
 // @namespace    NoAutoplayDarkThemeTweak
-// @version      1.1.6
+// @version      1.1.7
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
@@ -83,8 +83,17 @@ function gensokyo3() {
     return true;
 }
 
+function gensokyo4() {
+        var elms=document.getElementsByClassName("ytp-autonav-toggle-button");
+    for (var i=0;i<elms.length;i++){
+    if(elms[i].getAttribute("aria-checked")=="true"){
+        elms[i].setAttribute("aria-checked", false);}
+}
+}
+
 waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
 var refreshIntervalId = setInterval(gensokyo, 1000);
 var refreshIntervalId2 = setInterval(gensokyo2, 100);
+var refreshIntervalId3 = setInterval(gensokyo4, 100);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
