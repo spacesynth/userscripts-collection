@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay Tweak
 // @namespace    vw9YouTubeDarkThemeNoAutoplayTweak
-// @version      1.1.9
+// @version      1.2.0
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
@@ -19,6 +19,7 @@
 
 'use strict';
 var fired = 0,
+    fired2 = 0,
     nameP = 'PREF',
     enableUS = '&gl=US',
     enableDark = '&f6=400',
@@ -79,9 +80,15 @@ function gensokyo2() {
 
 function gensokyo3() {
     var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
-    if (element1[0] != undefined) {
-        if (element1[0].getAttribute("style") != "display: none;") {
-            element1[0].click();
+    var player = document.getElementById("movie_player")
+    if (player != null) {
+        if (player.getPlayerState() == 0 && fired2 < 1) {
+            if (element1[0] != undefined) {
+                if (element1[0].getAttribute("style") != "display: none;") {
+                    fired2 += 1;
+                    element1[0].click();
+                }
+            }
         }
     }
     return true;
@@ -95,7 +102,7 @@ function gensokyo4() {
         }
     }
 }
-//waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
+waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
 var refreshIntervalId = setInterval(gensokyo, 1000);
 var refreshIntervalId2 = setInterval(gensokyo2, 100);
 var refreshIntervalId3 = setInterval(gensokyo4, 1000);
