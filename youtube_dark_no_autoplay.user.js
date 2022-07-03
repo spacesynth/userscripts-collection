@@ -3,8 +3,8 @@
 // @namespace    vw9YouTubeDarkThemeNoAutoplayRoids
 // @version      1.2.1
 // @description  Dark theme with no autoplay
-// @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
-// @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_auto_tweak.user.js
+// @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
+// @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
 // @author       vaporwave9
 // @match        *://www.youtube.com/*
