@@ -21,10 +21,12 @@
 var fired = 0,
     fired2 = 0,
     nameP = 'PREF',
+    enableUS = '&gl=US',
     enableDark = '&f6=400',
     disableAutoplay = '&f5=30000',
     isDark = false,
-    noAutoplay = false;
+    noAutoplay = false,
+    isEnglish = false; //do not edit
 
 function gensokyo() {
     var matchA = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
@@ -45,8 +47,14 @@ function gensokyo() {
     } else {
         noAutoplay = true; //only set if cookie 2 change worked
     }
-    if (isDark === true && noAutoplay === true /*&& isEnglish == true*/) {
-        console.log(isDark, noAutoplay, /*isEnglish,*/ "S ALL GOOD MAN!")
+    var matchC = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
+    if (matchC[2].includes('gl=US') == false) {
+        document.cookie = 'PREF=' + matchC[2] + enableUS + ';  path=/; domain=.youtube.com';
+    } else {
+        isEnglish = true; //only set if cookie 3 change worked
+    }
+    if (isDark === true && noAutoplay === true && isEnglish == true) {
+        console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
         clearInterval(refreshIntervalId);
     }
     var ragemode = document.querySelector("ytd-app")
