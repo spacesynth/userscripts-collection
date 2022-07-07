@@ -1,0 +1,23 @@
+/* ==UserStyle==
+@name         Youtube Small Thumbnails - Normal Size Style
+@namespace    YoutubeSmallThumbnailsStyle
+@version      1.0.0
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/") {
+/*
+ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 6 !important; --ytd-rich-grid-posts-per-row: 6 !important; --ytd-rich-grid-slim-items-per-row: 6 !important; max-width: 1390px !important; }
+ytd-rich-grid-renderer > #contents > ytd-rich-grid-row, ytd-rich-grid-renderer > #contents > ytd-rich-grid-row > #contents { display: contents; }
+ytd-rich-item-renderer { min-width: 210px !important; }
+*/
+#avatar-link { display: none; }
+#video-title { font-size: 1.4rem !important; }
+#channel-name.ytd-video-meta-block { font-size: 1.3rem !important; }
+#metadata-line { font-size: 1.3rem !important; }
+/*
+.ytd-mini-guide-renderer { display: none; }
+.ytd-video-renderer:not([use-prominent-thumbs]) ytd-thumbnail.ytd-video-renderer { flex: none; width: 246px; height: 138px; }
+ytd-playlist-renderer[use-prominent-thumbs] ytd-playlist-thumbnail.ytd-playlist-renderer { max-width: 246px; min-width: 240px; }
+ytd-radio-renderer[use-prominent-thumbs] ytd-thumbnail.ytd-radio-renderer { max-width: 246px; min-width: 240px; }
+*/
+}
