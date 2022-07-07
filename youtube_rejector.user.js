@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Rejector
 // @namespace    vw9YouTubeRejector
-// @version      1.0.0
+// @version      1.1.0
 // @description  No consent data sniffers
 // @author       vaporwave9
 // @match        *://*.youtube.com/*
@@ -25,5 +25,14 @@ function gensokyo() {
     }
     return false;
 }
+function gensokyo2() {
+    var aTags2 = document.getElementsByTagName("span");
+    for (var j = 0; j < aTags2.length; j++) {
+        if (aTags2[j].textContent == "Reject all") {
+            aTags2[j].click();
+        }
+    }
+    clearInterval(refreshIntervalId);
+}
 waitForKeyElements("[aria-label^='Reject']", gensokyo);
-//var refreshIntervalId = setInterval(gensokyo, 3000);
+var refreshIntervalId = setInterval(gensokyo2, 200);
