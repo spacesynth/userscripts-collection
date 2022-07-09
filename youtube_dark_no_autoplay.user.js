@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay on Steroids
 // @namespace    vw9YouTubeDarkThemeNoAutoplayRoids
-// @version      1.2.1
+// @version      1.2.2
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
@@ -63,23 +63,8 @@ function gensokyo() {
     }
 };
 
-function gensokyo2() {
-    var player = document.getElementById("movie_player")
-    if (player != null) {
-        if (document.visibilityState === 'visible' && fired < 1) {
-            if (player.getPlayerState() == 1) {
-                fired += 1;
-                clearInterval(refreshIntervalId2);
-                console.log("fired!");
-            } else if (player.getPlayerState() != 1) {
-                player.playVideo();
-            }
-        }
-    }
-};
-
 function gensokyo3() {
-    var element1 = document.querySelectorAll("[aria-label^='Cancel autoplay']");
+    var element1 = document.querySelectorAll("[aria-label^='Cancel']");
     var player = document.getElementById("movie_player")
     if (player != null) {
         if (player.getPlayerState() == 0 && fired2 < 1) {
@@ -102,9 +87,8 @@ function gensokyo4() {
         }
     }
 }
-waitForKeyElements("[aria-label^='Cancel autoplay']", gensokyo3);
+waitForKeyElements("[aria-label^='Cancel']", gensokyo3);
 var refreshIntervalId = setInterval(gensokyo, 1000);
-var refreshIntervalId2 = setInterval(gensokyo2, 100);
 var refreshIntervalId3 = setInterval(gensokyo4, 1000);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
