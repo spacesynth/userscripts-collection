@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay on Steroids
 // @namespace    vw9YouTubeDarkThemeNoAutoplayRoids
-// @version      1.2.3
+// @version      1.2.4
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
@@ -53,13 +53,16 @@ function gensokyo() {
     } else {
         isEnglish = true; //only set if cookie 3 change worked
     }
-    if (isDark === true && noAutoplay === true && isEnglish == true) {
-        console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
-        clearInterval(refreshIntervalId);
-    }
     var ragemode = document.querySelector("ytd-app")
     if (ragemode.isAppDarkTheme() === false) {
         ragemode.onDarkModeToggledAction()
+    }
+    if (isDark === true && noAutoplay === true && isEnglish == true) {
+        console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
+        clearInterval(refreshIntervalId);
+    } else {
+        location.reload();
+        console.log("reloading!");
     }
 };
 
