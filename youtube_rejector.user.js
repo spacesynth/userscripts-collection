@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         YouTube Rejector
 // @namespace    vw9YouTubeRejector
-// @version      1.1.2
+// @version      1.1.3
 // @description  No consent data sniffers
 // @author       vaporwave9
 // @match        *://*.youtube.com/*
 // @require      https://code.jquery.com/jquery-1.7.2.min.js
 // @require      https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/waitForKeyElements.js
-// @run-at       document-end
+// @run-at       document-start
 // @grant        none
 // @license      WTFPL
 // @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
@@ -16,7 +16,6 @@
 
 'use strict';
 var fired = 0;
-
 function gensokyo3() {
     var player = document.getElementById("movie_player")
     if (player != null) {
@@ -43,13 +42,14 @@ function gensokyo() {
     gensokyo3()
     return false;
 }
+
 function gensokyo2() {
     if (fired > 0) {
         clearInterval(refreshIntervalId);
     } else {
         var aTags2 = document.getElementsByTagName("a");
         for (var j = 0; j < aTags2.length; j++) {
-            if (aTags2[j].textContent == "Reject all") {
+            if (aTags2[j].textContent == "Reject") {
                 aTags2[j].click();
                 fired += 1;
             }
