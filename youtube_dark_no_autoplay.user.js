@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay on Steroids
 // @namespace    vw9YouTubeDarkThemeNoAutoplayRoids
-// @version      1.2.5
+// @version      1.2.6
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
 // @author       vaporwave9
-// @match        *://www.youtube.com/*
+// @match        *://*.youtube.com/*
 // @run-at       document-start
 // @grant        none
 // @license      WTFPL
@@ -28,7 +28,33 @@ var fired = 0,
     noAutoplay = false,
     isEnglish = false; //do not edit
 
-function gensokyo() {
+
+function gensokyo4() {
+    var element1 = document.querySelectorAll("[aria-label^='Cancel']");
+    var player = document.getElementById("movie_player")
+    if (player != null) {
+        if (player.getPlayerState() == 0) {
+            if (element1[0] != undefined) {
+                if (element1[0].getAttribute("style") != "display: none;") {
+                    element1[0].click();
+                    clearInterval(refreshIntervalId4);
+                }
+            }
+        }
+    }
+}
+
+function gensokyo3() {
+    var elms = document.getElementsByClassName("ytp-autonav-toggle-button");
+    if (elms[0] != undefined) {
+        if (elms[0].getAttribute("aria-checked") == "true") {
+            elms[0].click();
+            //elms[0].setAttribute("aria-checked", false);
+        }
+    }
+}
+
+function gensokyo2() {
     var matchA = document.cookie.match(new RegExp('(^| )' + nameP + '=([^;]+)'));
     if (matchA[2].includes('f5=20000') === true) {
         var newstr = matchA[2].replace(/f5=20000/, "f5=30000");
@@ -60,54 +86,32 @@ function gensokyo() {
     if (isDark === true && noAutoplay === true && isEnglish == true) {
         console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
         clearInterval(refreshIntervalId);
-    }/* else {
-        location.reload();
-        console.log("reloading!");
-    }*/
-};
-
-function gensokyo2() {
-    var player = document.getElementById("movie_player")
-    if (player != null) {
-        if (document.visibilityState === 'visible' && fired < 1) {
-            if (player.getPlayerState() == 1) {
-                fired += 1;
-                clearInterval(refreshIntervalId2);
-                console.log("fired!");
-            } else if (player.getPlayerState() != 1) {
-                player.playVideo();
-            }
-        }
-    }
-};
-
-function gensokyo3() {
-    var element1 = document.querySelectorAll("[aria-label^='Cancel']");
-    var player = document.getElementById("movie_player")
-    if (player != null) {
-        if (player.getPlayerState() == 0 && fired2 < 1) {
-            if (element1[0] != undefined) {
-                if (element1[0].getAttribute("style") != "display: none;") {
-                    fired2 += 1;
-                    element1[0].click();
-                }
-            }
-        }
-    }
-    return true;
-}
-
-function gensokyo4() {
-    var elms = document.getElementsByClassName("ytp-autonav-toggle-button");
-    if (elms[0] != undefined) {
-        if (elms[0].getAttribute("aria-checked") == "true") {
-            elms[0].setAttribute("aria-checked", false);
+    } else {
+        if (/https:\/\/www\.youtube\.com\/watch.*/.test(window.location.href) === false) {
+            location.reload();
+            console.log("reloading!");
         }
     }
 }
-waitForKeyElements("[aria-label^='Cancel']", gensokyo3);
-var refreshIntervalId = setInterval(gensokyo, 1000);
-var refreshIntervalId2 = setInterval(gensokyo2, 100);
-var refreshIntervalId3 = setInterval(gensokyo4, 1000);
+
+function gensokyo() {
+    var element1 = document.querySelectorAll("[aria-label^='Reject']");
+    if (element1 != undefined) {
+        if (/https\:\/\/(?=consent).*\.youtube\..*/.test(window.location.href) === true) {
+            document.cookie = 'PREF=tz=Europe.Berlin&f5=30000&f6=400&gl=US;  path=/; domain=.youtube.com';
+            element1[0].click();
+        }
+        if (/https\:\/\/(?=consent).*\.youtube\..*/.test(window.location.href) === false) {
+            element1[0].click();
+            gensokyo2();
+        }
+    }
+    return false;
+}
+
+
+waitForKeyElements("[aria-label^='Reject']", gensokyo);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
+var refreshIntervalId3 = setInterval(gensokyo3, 400);
+var refreshIntervalId4 = setInterval(gensokyo4, 400);
