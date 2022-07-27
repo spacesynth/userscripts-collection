@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay on Steroids
 // @namespace    vw9YouTubeDarkThemeNoAutoplayRoids
-// @version      1.2.4
+// @version      1.2.5
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
@@ -60,10 +60,10 @@ function gensokyo() {
     if (isDark === true && noAutoplay === true && isEnglish == true) {
         console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
         clearInterval(refreshIntervalId);
-    } else {
+    }/* else {
         location.reload();
         console.log("reloading!");
-    }
+    }*/
 };
 
 function gensokyo2() {
