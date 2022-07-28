@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay on Steroids
 // @namespace    vw9YouTubeDarkThemeNoAutoplayRoids
-// @version      1.2.7
+// @version      1.2.8
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
@@ -19,7 +19,6 @@
 
 'use strict';
 var fired = 0,
-    fired2 = 0,
     nameP = 'PREF',
     enableUS = '&gl=US',
     enableDark = '&f6=400',
@@ -50,6 +49,7 @@ function gensokyo3() {
         if (elms[0].getAttribute("aria-checked") == "true") {
             elms[0].click();
             //elms[0].setAttribute("aria-checked", false);
+            clearInterval(refreshIntervalId3);
         }
     }
 }
@@ -81,12 +81,12 @@ function gensokyo2() {
     }
     if (isDark === true && noAutoplay === true && isEnglish == true) {
         console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
-        clearInterval(refreshIntervalId);
     } else {
         if (/https:\/\/www\.youtube\.com\/watch.*/.test(window.location.href) === false) {
             location.reload();
             console.log("reloading!");
         }
+        gensokyo3();
     }
 }
 
@@ -108,7 +108,6 @@ function gensokyo() {
     }
     return false;
 }
-
 
 waitForKeyElements("[aria-label^='Reject']", gensokyo);
 window.addEventListener("yt-navigate-finish", gensokyo);
