@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Dark Theme + No Autoplay
 // @namespace    vw9YouTubeDarkThemeNoAutoplay
-// @version      1.3.0
+// @version      1.4.0
 // @description  Dark theme with no autoplay
 // @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
 // @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
@@ -81,7 +81,8 @@ function gensokyo() {
     if (isDark === true && noAutoplay === true && isEnglish == true) {
         console.log(isDark, noAutoplay, isEnglish, "S ALL GOOD MAN!")
     } else {
-        location.reload();
+        //location.reload();
+        document.getElementsByTagName("html")[0].setAttribute("dark", "true");
         console.log("reloading!");
         gensokyo3();
     }
