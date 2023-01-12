@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name         Cookie Shut Up 2022
-// @namespace    vw9CookieShutUp2022
-// @version      1.0.0
+// @name         Cookie Shut Up 2023
+// @namespace    vw9CookieShutUp2023
+// @version      1.1.0
 // @description  Tell Google to bugger off
+// @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/cookie_shutup.user.js
+// @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/cookie_shutup.user.js
+// @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
 // @author       vaporwave9
 // @include      *://*.google.tld/*
 // @run-at       document-end
-// @grant        GM_setValue
-// @grant        GM_getValue
+// @grant        none
 // @license      WTFPL
 // @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
 // @noframes
