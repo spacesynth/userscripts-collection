@@ -19,7 +19,7 @@
 
 'use strict';
 function gensokyo() {
-    var element1 = document.querySelectorAll("[aria-label='Reject all']");
+    var element1 = document.querySelectorAll("[aria-label^='Reject the use of cookies']");
     if (element1 != undefined) {
         if (/https\:\/\/(?=consent).*\.youtube\..*/.test(window.location.href) === true) {
             document.cookie = 'PREF=tz=Europe.Berlin&f5=30000&f6=400&gl=US;  path=/; domain=.youtube.com';
@@ -36,6 +36,6 @@ function gensokyo() {
     return false;
 }
 
-waitForKeyElements("[aria-label='Reject all']", gensokyo);
+waitForKeyElements("[aria-label^='Reject the use of cookies']", gensokyo);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
