@@ -1,8 +1,11 @@
 // ==UserScript==
 // @name         YouTube Rejector
 // @namespace    vw9YouTubeRejector
-// @version      1.3.0
+// @version      1.4.0
 // @description  No consent data sniffers
+// @updateURL    https://github.com/vaporwave9/userscripts-collection/edit/master/youtube_rejector.user.js
+// @downloadURL  https://github.com/vaporwave9/userscripts-collection/edit/master/youtube_rejector.user.js
+// @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
 // @author       vaporwave9
 // @match        *://*.youtube.com/*
 // @require      https://code.jquery.com/jquery-1.7.2.min.js
@@ -16,7 +19,7 @@
 
 'use strict';
 function gensokyo() {
-    var element1 = document.querySelectorAll("[aria-label^='Reject']");
+    var element1 = document.querySelectorAll("[aria-label='Reject all']");
     if (element1 != undefined) {
         if (/https\:\/\/(?=consent).*\.youtube\..*/.test(window.location.href) === true) {
             document.cookie = 'PREF=tz=Europe.Berlin&f5=30000&f6=400&gl=US;  path=/; domain=.youtube.com';
@@ -33,6 +36,6 @@ function gensokyo() {
     return false;
 }
 
-waitForKeyElements("[aria-label^='Reject']", gensokyo);
+waitForKeyElements("[aria-label='Reject all']", gensokyo);
 window.addEventListener("yt-navigate-finish", gensokyo);
 window.addEventListener("spfdone", gensokyo);
