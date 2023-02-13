@@ -2,13 +2,13 @@
 // @name         Twitter Unhider
 // @namespace    vw9TwitterUnhider
 // @description  Unhide adult Twitter posts
-// @author       vaporwave9
+// @author       spacesynth
 // @version      1.0.0
 // @match        https://twitter.com/*
 // @run-at       document-end
 // @grant        none
 // @license      WTFPL
-// @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
+// @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/icon.png
 // ==/UserScript==
 
 'use strict';
