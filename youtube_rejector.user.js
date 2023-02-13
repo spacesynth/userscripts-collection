@@ -3,17 +3,17 @@
 // @namespace    vw9YouTubeRejector
 // @version      1.4.1
 // @description  No consent data sniffers
-// @updateURL    https://github.com/vaporwave9/userscripts-collection/edit/master/youtube_rejector.user.js
-// @downloadURL  https://github.com/vaporwave9/userscripts-collection/edit/master/youtube_rejector.user.js
-// @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
-// @author       vaporwave9
+// @updateURL    https://github.com/spacesynth/userscripts-collection/edit/master/youtube_rejector.user.js
+// @downloadURL  https://github.com/spacesynth/userscripts-collection/edit/master/youtube_rejector.user.js
+// @supportURL   https://github.com/spacesynth/userscripts-collection/issues
+// @author       spacesynth
 // @match        *://*.youtube.com/*
 // @require      https://code.jquery.com/jquery-1.7.2.min.js
-// @require      https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/waitForKeyElements.js
+// @require      https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/waitForKeyElements.js
 // @run-at       document-start
 // @grant        none
 // @license      WTFPL
-// @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
+// @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/icon.png
 // @noframes
 // ==/UserScript==
 
