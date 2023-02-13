@@ -3,15 +3,15 @@
 // @namespace    vw9CookieShutUp2023
 // @version      1.1.0
 // @description  Tell Google to bugger off
-// @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/cookie_shutup.user.js
-// @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/cookie_shutup.user.js
-// @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
-// @author       vaporwave9
+// @updateURL    https://github.com/spacesynth/userscripts-collection/raw/master/cookie_shutup.user.js
+// @downloadURL  https://github.com/spacesynth/userscripts-collection/raw/master/cookie_shutup.user.js
+// @supportURL   https://github.com/spacesynth/userscripts-collection/issues
+// @author       spacesynth
 // @include      *://*.google.tld/*
 // @run-at       document-end
 // @grant        none
 // @license      WTFPL
-// @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
+// @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/icon.png
 // @noframes
 // ==/UserScript==
 
