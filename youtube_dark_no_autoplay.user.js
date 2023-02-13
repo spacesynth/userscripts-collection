@@ -3,15 +3,15 @@
 // @namespace    vw9YouTubeDarkThemeNoAutoplay
 // @version      1.4.0
 // @description  Dark theme with no autoplay
-// @updateURL    https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
-// @downloadURL  https://github.com/vaporwave9/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
-// @supportURL   https://github.com/vaporwave9/userscripts-collection/issues
-// @author       vaporwave9
+// @updateURL    https://github.com/spacesynth/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
+// @downloadURL  https://github.com/spacesynth/userscripts-collection/raw/master/youtube_dark_no_autoplay.user.js
+// @supportURL   https://github.com/spacesynth/userscripts-collection/issues
+// @author       spacesynth
 // @match        *://*.youtube.com/*
 // @run-at       document-start
 // @grant        none
 // @license      WTFPL
-// @icon         https://raw.githubusercontent.com/vaporwave9/userscripts-collection/master/icon.png
+// @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/icon.png
 // @noframes
 // ==/UserScript==
 
