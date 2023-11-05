@@ -15,7 +15,7 @@
 
 'use strict';
 function cookieMaker() {
-    if (document.cookie.includes('arkmode_content=show') == false){
+    if (document.cookie.includes('darkmode_content=show') == false){
     var a = "optOutTracking_content=show;fussball_content=hide;twitter_content=show;youtube_content=show;facebook_content=show;instagram_content=show;messengerpeople_content=show;darkmode_content=show";
     var b = a.split(";");
         for(var c=0; c<b.length; c++){
