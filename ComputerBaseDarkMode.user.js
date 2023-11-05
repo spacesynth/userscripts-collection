@@ -1,0 +1,39 @@
+// ==UserScript==
+// @name         # ComputerBase Dark Mode
+// @namespace    spsComputerBaseDarkMode
+// @description  Automatically turn on dark mode on CB
+// @version      1.0.0
+// @author       spacesynth
+// @supportURL   https://github.com/spacesynth/userscripts-collection
+// @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
+// @license      WTFPL
+// @match        https://www.computerbase.de/*
+// @run-at       document-end
+// @require      https://code.jquery.com/jquery-1.7.2.min.js
+// @require      https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/waitForKeyElements.js
+// @grant        none
+// @noframes
+// ==/UserScript==
+
+'use strict';
+function cookieMaker() {
+    if (document.cookie.includes('color-scheme=dark') == false) {
+        var a = "color-scheme=dark; no-fixed-header=1; consent=0";
+        var b = a.split(";");
+        for (var c = 0; c < b.length; c++) {
+            document.cookie = b[c] + "; path=/";
+        }
+        location.reload();
+        console.log("this only runs once per session");
+    }
+}
+cookieMaker();
+
+function gensokyo() {
+    var element1 = document.querySelector('[title="Anzeige ausblenden"]');
+    if (element1 != undefined) {
+        element1.click();
+    }
+    return true;
+}
+waitForKeyElements('[title="Anzeige ausblenden"]', gensokyo);
