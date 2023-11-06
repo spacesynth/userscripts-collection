@@ -38,7 +38,6 @@ GM_cookie.set(
     }
 )
 location.reload();
-}
-}
+}}
 console.log('Sanae is no longer winning!')
 })();
