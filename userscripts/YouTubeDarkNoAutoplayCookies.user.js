@@ -13,7 +13,12 @@
 // @grant        GM.cookie
 // @noframes
 // ==/UserScript==
-
+/*
+ONLY USE THIS WITH
+Tampermonkey BETA 5.0.6189 or higher
+https://firefox.tampermonkey.net/firefox-current-beta.xpi
+signed XPI file
+*/
 (function() {
 'use strict';
 if (/.*PREF.*/.test(document.cookie)===false){
