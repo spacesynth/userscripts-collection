@@ -17,7 +17,7 @@
 (function() {
 'use strict';
 if (/.*PREF.*/.test(document.cookie)===false){
-if (/.*PREF=tz=Europe.Berlin&f5=30000&f6=400&gl=US"/.test(document.cookie)===false){
+if (/.*PREF=tz=Europe.Berlin&f5=30000&f6=400&gl=US.*/.test(document.cookie)===false){
 GM.cookie.delete({ name: 'PREF' })
 GM_cookie.set(
     {
