@@ -19,6 +19,11 @@ function fixHefeLinks() {
     for (var i = 0; i < anchors.length; i++) {
         if (i >= 3) {
         var domain = /^(?:http|https):\/\/(?:www\.)?([a-zA-Z0-9\.\-]*).*$/.exec(anchors[i]);
+        if (domain[1] != "blog.fefe.de") {
         anchors[i].innerHTML = anchors[i].innerHTML + " (" + domain[1] + ")"
+        }
+        else {
+        anchors[i].innerHTML = anchors[i].innerHTML + " 🐗"
+        }
 }}}
 fixHefeLinks();
