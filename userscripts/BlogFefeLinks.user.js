@@ -13,6 +13,10 @@
 // @noframes
 // ==/UserScript==
 
+/*
+use with
+https://blog.fefe.de/?css=paper.css
+*/
 'use strict';
 function fixHefeLinks() {
     var anchors = document.getElementsByTagName("a");
