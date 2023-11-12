@@ -7,22 +7,16 @@
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @license      WTFPL
-// @match        https://arstechnica.com/*
+// @match        *://*.arstechnica.com/*
 // @run-at       document-end
 // @grant        none
 // @noframes
 // ==/UserScript==
 
+(function() {
 'use strict';
-function cookieMaker() {
-    if (document.cookie.includes('theme=dark') == false){
-    var a = "theme=dark;";
-    var b = a.split(";");
-        for(var c=0; c<b.length; c++){
-            document.cookie = b[c]+"; path=/";
-        }
-        location.reload();
-        console.log("this only runs once per session");
-    }
-}
-cookieMaker();
+if (document.cookie.includes('theme=dark') == false){
+    document.cookie = "theme=dark; path=/";
+    location.reload();
+    console.log("this only runs once per session");
+}})();
