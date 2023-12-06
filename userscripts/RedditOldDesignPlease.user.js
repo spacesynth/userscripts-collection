@@ -35,8 +35,9 @@ function fixPredditLinks() {
     for (var i = 0; i < anchors.length; i++) {
         if (anchors[i].slot === 'full-post-link') {
             if (/.*\/comments\/.*/.test(anchors[i].href) === true) {
-            anchors[i].target = anchors[i].target.replace('_self', '_blank');
-        }}
+                anchors[i].target = anchors[i].target.replace('_self', '_blank');
+            }
+        }
     }
 }
 var refreshIntervalId2 = setInterval(fixPredditLinks, 100);
