@@ -7,7 +7,7 @@
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @license      WTFPL
-// @include      *://*.reddit.com/r/*
+// @include      *://*.reddit.com/*
 // @run-at       document-start
 // @grant        none
 // @noframes
@@ -33,12 +33,10 @@ fixPredditURIs();
 function fixPredditLinks() {
     var anchors = document.getElementsByTagName("a");
     for (var i = 0; i < anchors.length; i++) {
-        if (/https:\/\/(old|www)\.reddit\.com\/(.*\/comments\/.*)/.test(anchors[i].href) === false) {
-            anchors[i].href = anchors[i].href.replace(/https:\/\/old\.reddit\.com\/(.*)/, 'https://www.reddit.com/$1');
-        }
-        if (/https:\/\/www\.reddit\.com\/(.*\/comments\/.*)/.test(anchors[i].href) === true) {
-            anchors[i].href = anchors[i].href.replace(/https:\/\/www\.reddit\.com\/(.*)/, 'https://old.reddit.com/$1');
-        }
+        if (anchors[i].slot === 'full-post-link') {
+            if (/.*\/comments\/.*/.test(anchors[i].href) === true) {
+            anchors[i].target = anchors[i].target.replace('_self', '_blank');
+        }}
     }
 }
 var refreshIntervalId2 = setInterval(fixPredditLinks, 100);
