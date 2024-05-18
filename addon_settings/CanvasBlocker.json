@@ -18,6 +18,18 @@
 			"protectWindow": false
 		},
 		{
+			"url": "cloudflare.com",
+			"protectWindow": false,
+			"protectedCanvasPart": "nothing",
+			"protectAudio": false,
+			"protectDOMRect": false,
+			"protectTextMetrics": false,
+			"protectScreen": false,
+			"allowWindowNameInFrames": false,
+			"protectSVG": false,
+			"protectNavigator": false
+		},
+		{
 			"url": "dhl.de",
 			"protectWindow": false
 		},
