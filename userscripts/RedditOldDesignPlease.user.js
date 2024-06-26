@@ -2,7 +2,7 @@
 // @name         # Reddit Old Design Please
 // @namespace    spsRedditOldDesignPlease
 // @description  Predditors are no longer winning
-// @version      1.1.0
+// @version      1.1.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -16,15 +16,16 @@
 'use strict';
 function fixPredditURIs() {
     var loc = window.location.href.toString();
-    var myCaptureGroup = loc.match(/https:\/\/www\.reddit\.com\/(.*\/comments\/.*)/);
+    var myCaptureGroup1 = loc.match(/https:\/\/www\.reddit\.com\/(.*\/comments\/.*)/);
     var myCaptureGroup2 = loc.match(/https:\/\/old\.reddit\.com\/(.*)/);
-    if (myCaptureGroup !== null || myCaptureGroup2 !== null) {
+    if (myCaptureGroup1 !== null) {
         if (/https:\/\/www\.reddit\.com\/(.*\/comments\/.*)/.test(window.location.href) === true) {
-            window.open("https://old.reddit.com/" + decodeURIComponent(myCaptureGroup[1]), "_self");
-        } else if (myCaptureGroup2 !== null) {
-            if (/https:\/\/old\.reddit\.com\/(.*\/comments\/.*)/.test(window.location.href) === false) {
-                window.open("https://www.reddit.com/" + decodeURIComponent(myCaptureGroup2[1]), "_self");
-            }
+            window.open("https://old.reddit.com/" + decodeURIComponent(myCaptureGroup1[1]), "_self");
+        }
+    }
+    else if (myCaptureGroup2 !== null) {
+        if (/https:\/\/old\.reddit\.com\/(.*\/comments\/.*)/.test(window.location.href) === false) {
+            window.open("https://www.reddit.com/" + decodeURIComponent(myCaptureGroup2[1]), "_self");
         }
     }
 }
