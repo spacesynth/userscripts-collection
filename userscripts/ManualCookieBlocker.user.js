@@ -17,7 +17,9 @@
 // @match        https://*.fandom.com/*
 // @match        https://www.berrybase.de/*
 // @match        https://clonezilla.org/*
-// @run-at       document-idle
+// @require      https://code.jquery.com/jquery-1.7.2.min.js
+// @require      https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/waitForKeyElements.js
+// @run-at       document-end
 // @grant        none
 // @noframes
 // ==/UserScript==
@@ -103,13 +105,12 @@ if (/https:\/\/[a-z]{1,63}.fandom.com\/.*/.test(window.location.href) == true) {
 function gensokyo8() {
     var button = document.querySelectorAll('[data-testid="reject-button"]');
     if (button != null) {
-        clearInterval(refreshIntervalId8);
         console.log("Cookie clicker should stop now");
         button[0].click();
     }
 }
 if (/https:\/\/www.imdb.com\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId8 = setInterval(gensokyo8, 200);
+    waitForKeyElements('[data-testid="reject-button"]', gensokyo8);
 }
 function gensokyo9() {
     var button = document.getElementsByClassName('cookie-permission--accept-button btn is--primary is--large is--center');
