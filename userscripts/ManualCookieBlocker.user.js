@@ -17,7 +17,7 @@
 // @match        https://*.fandom.com/*
 // @match        https://www.berrybase.de/*
 // @match        https://clonezilla.org/*
-// @run-at       document-start
+// @run-at       document-idle
 // @grant        none
 // @noframes
 // ==/UserScript==
@@ -26,8 +26,9 @@
 function gensokyo1() {
     var button = document.getElementById("sp-cc-rejectall-link");
     if (button != null) {
-        clearInterval(gensokyo1);
+        clearInterval(refreshIntervalId1);
         button.click();
+        console.log("Cookie clicker should stop now");
     }
 }
 if (/https:\/\/www\.amazon\.[a-z]{2,3}\/.*/.test(window.location.href) == true) {
@@ -36,7 +37,8 @@ if (/https:\/\/www\.amazon\.[a-z]{2,3}\/.*/.test(window.location.href) == true) 
 function gensokyo2() {
     var button = document.getElementsByClassName("close cookie-notifications-btn")[0];
     if (button != null) {
-        clearInterval(gensokyo2);
+        clearInterval(refreshIntervalId2);
+        console.log("Cookie clicker should stop now");
         button.click();
     }
 }
@@ -46,7 +48,8 @@ if (/https:\/\/hackaday.com\/.*/.test(window.location.href) == true) {
 function gensokyo3() {
     var button = document.getElementById("popin_tc_privacy_button_2");
     if (button != null) {
-        clearInterval(gensokyo3);
+        console.log("Cookie clicker should stop now");
+        clearInterval(refreshIntervalId3);
         button.click();
     }
 }
@@ -56,7 +59,8 @@ if (/https:\/\/www.edeka.de\/.*/.test(window.location.href) == true) {
 function gensokyo4() {
     var button = document.querySelectorAll('[onclick="declineAnalytics();"]')[0];
     if (button != null) {
-        clearInterval(gensokyo4);
+        clearInterval(refreshIntervalId4);
+        console.log("Cookie clicker should stop now");
         button.click();
     }
 }
@@ -66,7 +70,8 @@ if (/https:\/\/rule34.xxx\/.*/.test(window.location.href) == true) {
 function gensokyo5() {
     var button = document.querySelectorAll('[onclick="tnc_agree();"]')[0];
     if (button != null) {
-        clearInterval(gensokyo5);
+        clearInterval(refreshIntervalId5);
+        console.log("Cookie clicker should stop now");
         button.click();
     }
 }
@@ -76,7 +81,8 @@ if (/https:\/\/rule34.paheal.net\/.*/.test(window.location.href) == true) {
 function gensokyo6() {
     var button = document.querySelectorAll('[onclick="declineAnalytics();"]')[0];
     if (button != null) {
-        clearInterval(gensokyo6);
+        clearInterval(refreshIntervalId6);
+        console.log("Cookie clicker should stop now");
         button.click();
     }
 }
@@ -85,10 +91,10 @@ if (/https:\/\/xbooru.com\/.*/.test(window.location.href) == true) {
 }
 function gensokyo7() {
     var button = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-    button[0].click();
     if (button != null) {
-        clearInterval(gensokyo7);
-        button.click();
+        clearInterval(refreshIntervalId7);
+        console.log("Cookie clicker should stop now");
+        button[0].click();
     }
 }
 if (/https:\/\/[a-z]{1,63}.fandom.com\/.*/.test(window.location.href) == true) {
@@ -96,10 +102,10 @@ if (/https:\/\/[a-z]{1,63}.fandom.com\/.*/.test(window.location.href) == true) {
 }
 function gensokyo8() {
     var button = document.querySelectorAll('[data-testid="reject-button"]');
-    button[0].click();
     if (button != null) {
-        clearInterval(gensokyo8);
-        button.click();
+        clearInterval(refreshIntervalId8);
+        console.log("Cookie clicker should stop now");
+        button[0].click();
     }
 }
 if (/https:\/\/www.imdb.com\/.*/.test(window.location.href) == true) {
@@ -107,10 +113,10 @@ if (/https:\/\/www.imdb.com\/.*/.test(window.location.href) == true) {
 }
 function gensokyo9() {
     var button = document.getElementsByClassName('cookie-permission--accept-button btn is--primary is--large is--center');
-    button[0].click();
     if (button != null) {
-        clearInterval(gensokyo9);
-        button.click();
+        clearInterval(refreshIntervalId9);
+        console.log("Cookie clicker should stop now");
+        button[0].click();
     }
 }
 if (/https:\/\/www.berrybase.de\/.*/.test(window.location.href) == true) {
@@ -118,10 +124,10 @@ if (/https:\/\/www.berrybase.de\/.*/.test(window.location.href) == true) {
 }
 function gensokyo10() {
     var button = document.getElementsByClassName('cc-btn cc-dismiss');
-    button[0].click();
     if (button != null) {
-        clearInterval(gensokyo10);
-        button.click();
+        clearInterval(refreshIntervalId10);
+        console.log("Cookie clicker should stop now");
+        button[0].click();
     }
 }
 if (/https:\/\/clonezilla.org\/.*/.test(window.location.href) == true) {
