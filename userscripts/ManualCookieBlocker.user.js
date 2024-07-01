@@ -74,7 +74,7 @@ function gensokyo4() {
     }
 }
 if (/https:\/\/rule34\.xxx\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId4 = setInterval(gensokyo4, 200);
+    var refreshIntervalId4 = setInterval(gensokyo4, 400);
 }
 function gensokyo5() {
     myRuns++;
@@ -87,7 +87,7 @@ function gensokyo5() {
     }
 }
 if (/https:\/\/rule34\.paheal\.net\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId5 = setInterval(gensokyo5, 200);
+    var refreshIntervalId5 = setInterval(gensokyo5, 400);
 }
 function gensokyo6() {
     myRuns++;
@@ -100,7 +100,7 @@ function gensokyo6() {
     }
 }
 if (/https:\/\/xbooru\.com\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId6 = setInterval(gensokyo6, 200);
+    var refreshIntervalId6 = setInterval(gensokyo6, 400);
 }
 function gensokyo7() {
     myRuns++;
@@ -113,7 +113,7 @@ function gensokyo7() {
     }
 }
 if (/https:\/\/.*\.fandom\.com\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId7 = setInterval(gensokyo7, 200);
+    var refreshIntervalId7 = setInterval(gensokyo7, 400);
 }
 function gensokyo8() {
     myRuns++;
@@ -126,7 +126,7 @@ function gensokyo8() {
     }
 }
 if (/https:\/\/www\.imdb\.com\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId8 = setInterval(gensokyo8, 200);
+    var refreshIntervalId8 = setInterval(gensokyo8, 400);
 }
 function gensokyo9() {
     myRuns++;
@@ -139,7 +139,7 @@ function gensokyo9() {
     }
 }
 if (/https:\/\/www\.berrybase\.de\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId9 = setInterval(gensokyo9, 200);
+    var refreshIntervalId9 = setInterval(gensokyo9, 400);
 }
 function gensokyo10() {
     myRuns++;
@@ -152,5 +152,5 @@ function gensokyo10() {
     }
 }
 if (/https:\/\/clonezilla\.org\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId10 = setInterval(gensokyo10, 200);
+    var refreshIntervalId10 = setInterval(gensokyo10, 400);
 }
