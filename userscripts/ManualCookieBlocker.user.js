@@ -65,7 +65,7 @@ if (/https:\/\/www\.edeka\.de\/.*/.test(window.location.href) == true) {
 }
 function gensokyo4() {
     myRuns++;
-    var button = document.querySelectorAll('[onclick="declineAnalytics();"]');
+    var button = document.querySelectorAll('a[onclick="declineAnalytics();"]');
     if (button[0].length !== 0) {
         button[0].click();
     if (myRuns > 3) {
@@ -78,7 +78,7 @@ if (/https:\/\/rule34\.xxx\/.*/.test(window.location.href) == true) {
 }
 function gensokyo5() {
     myRuns++;
-    var button = document.querySelectorAll('[onclick="tnc_agree();"]');
+    var button = document.querySelectorAll('a[onclick="tnc_agree();"]');
     if (button[0].length !== 0) {
         button[0].click();
     if (myRuns > 3) {
@@ -91,7 +91,7 @@ if (/https:\/\/rule34\.paheal\.net\/.*/.test(window.location.href) == true) {
 }
 function gensokyo6() {
     myRuns++;
-    var button = document.querySelectorAll('[onclick="declineAnalytics();"]');
+    var button = document.querySelectorAll('a[onclick="declineAnalytics();"]');
     if (button[0].length !== 0) {
         button[0].click();
     if (myRuns > 3) {
@@ -117,7 +117,7 @@ if (/https:\/\/.*\.fandom\.com\/.*/.test(window.location.href) == true) {
 }
 function gensokyo8() {
     myRuns++;
-    var button = document.querySelectorAll('[data-testid="reject-button"]');
+    var button = document.querySelectorAll('button[data-testid="reject-button"]');
     if (button[0].length !== 0) {
         button[0].click();
     if (myRuns > 3) {
