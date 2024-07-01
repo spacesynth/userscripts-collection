@@ -37,33 +37,33 @@ function clicker(myStr) {
         }, 400);
     }
 }
-if (/https:\/\/www\.amazon\.[a-z]{2,3}\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/www\.amazon\.[a-z]{2,3}\/.*/.test(window.location.href) == true) {
     clicker('button[id="sp-cc-rejectall-link"]');
 }
-if (/https:\/\/hackaday\.com\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/hackaday\.com\/.*/.test(window.location.href) == true) {
     clicker('button[class="accept cookie-notifications-btn"]');
 }
-if (/https:\/\/www\.edeka\.de\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/www\.edeka\.de\/.*/.test(window.location.href) == true) {
     clicker('button[id="popin_tc_privacy_button_2"]');
 }
-if (/https:\/\/rule34\.xxx\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/rule34\.xxx\/.*/.test(window.location.href) == true) {
     clicker('a[onclick="declineAnalytics();"]');
 }
-if (/https:\/\/rule34\.paheal\.net\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/rule34\.paheal\.net\/.*/.test(window.location.href) == true) {
     clicker('a[onclick="tnc_agree();"]');
 }
-if (/https:\/\/xbooru\.com\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/xbooru\.com\/.*/.test(window.location.href) == true) {
     clicker('a[onclick="declineAnalytics();"]');
 }
-if (/https:\/\/.*\.fandom\.com\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/[a-z0-9\-]{0,255}\.?fandom\.com\/.*/.test(window.location.href) == true) {
     clicker('div[data-tracking-opt-in-accept="true"]');
 }
-if (/https:\/\/www\.imdb\.com\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/www\.imdb\.com\/.*/.test(window.location.href) == true) {
     clicker('button[data-testid="reject-button"]');
 }
-if (/https:\/\/www\.berrybase\.de\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/www\.berrybase\.de\/.*/.test(window.location.href) == true) {
     clicker('a[class="cookie-permission--accept-button btn is--primary is--large is--center"]');
 }
-if (/https:\/\/clonezilla\.org\/.*/.test(window.location.href) == true) {
+if (/https\:\/\/clonezilla\.org\/.*/.test(window.location.href) == true) {
     clicker('a[class="cc-btn cc-dismiss"]');
 }
