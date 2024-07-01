@@ -9,6 +9,8 @@
 // @license      WTFPL
 // @include      https://www.amazon.tld/*
 // @match        https://hackaday.com/*
+// @match        https://hackaday.io/*
+// @match        https://www.regex-escape.com/*
 // @match        https://www.edeka.de/*
 // @match        https://rule34.xxx/*
 // @match        https://rule34.paheal.net/*
@@ -26,7 +28,6 @@
 var myRuns = 0;
 function clicker(myStr) {
     myRuns++;
-    console.log("Cookie clicker active:", myRuns)
     var button = document.querySelectorAll(myStr);
     if (typeof button[0] !== 'undefined') {
         button[0].click();
@@ -66,4 +67,10 @@ if (/https\:\/\/www\.berrybase\.de\/.*/.test(window.location.href) == true) {
 }
 if (/https\:\/\/clonezilla\.org\/.*/.test(window.location.href) == true) {
     clicker('a[class="cc-btn cc-dismiss"]');
+}
+if (/https\:\/\/hackaday\.io\/.*/.test(window.location.href) == true) {
+    clicker('button[class="cookie-banner__button-container_button j-accept-cookies"]');
+}
+if (/https\:\/\/www\.regex\-escape\.com\/.*/.test(window.location.href) == true) {
+    clicker('button[on="tap:consent-element.reject"]');
 }
