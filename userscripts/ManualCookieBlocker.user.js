@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.0.1
+// @version      1.0.2
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -23,56 +23,53 @@
 // ==/UserScript==
 
 'use strict';
+var myRuns = 0;
 function gensokyo1() {
-    var button = document.getElementById("sp-cc-rejectall-link");
-    if (button != null) {
-        button.click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
+    myRuns++;
+    var button = document.querySelectorAll('button[id="sp-cc-rejectall-link"]');
+    if (button[0].length !== 0) {
+        button[0].click();
+    if (myRuns > 3) {
             clearInterval(refreshIntervalId1);
         }
     }
 }
 if (/https:\/\/www\.amazon\.[a-z]{2,3}\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId1 = setInterval(gensokyo1, 200);
+    var refreshIntervalId1 = setInterval(gensokyo1, 400);
 }
 function gensokyo2() {
-    var button = document.getElementsByClassName("close cookie-notifications-btn")[0];
-    if (button != null) {
-        button.click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId2);
+    myRuns++;
+    var button = document.querySelectorAll('button[class="accept cookie-notifications-btn"]');
+    if (button[0].length !== 0) {
+        button[0].click();
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
 if (/https:\/\/hackaday\.com\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId2 = setInterval(gensokyo2, 200);
+    var refreshIntervalId2 = setInterval(gensokyo2, 400);
 }
 function gensokyo3() {
-    var button = document.getElementById("popin_tc_privacy_button_2");
-    if (button != null) {
-        button.click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId3);
+    myRuns++;
+    var button = document.querySelectorAll('button[id="popin_tc_privacy_button_2"]');
+    if (button[0].length !== 0) {
+        button[0].click();
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
 if (/https:\/\/www\.edeka\.de\/.*/.test(window.location.href) == true) {
-    var refreshIntervalId3 = setInterval(gensokyo3, 200);
+    var refreshIntervalId3 = setInterval(gensokyo3, 400);
 }
 function gensokyo4() {
-    var button = document.querySelectorAll('[onclick="declineAnalytics();"]')[0];
-    if (button != null) {
-        button.click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId4);
+    myRuns++;
+    var button = document.querySelectorAll('[onclick="declineAnalytics();"]');
+    if (button[0].length !== 0) {
+        button[0].click();
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
@@ -80,13 +77,12 @@ if (/https:\/\/rule34\.xxx\/.*/.test(window.location.href) == true) {
     var refreshIntervalId4 = setInterval(gensokyo4, 200);
 }
 function gensokyo5() {
-    var button = document.querySelectorAll('[onclick="tnc_agree();"]')[0];
-    if (button != null) {
-        button.click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId5);
+    myRuns++;
+    var button = document.querySelectorAll('[onclick="tnc_agree();"]');
+    if (button[0].length !== 0) {
+        button[0].click();
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
@@ -94,13 +90,12 @@ if (/https:\/\/rule34\.paheal\.net\/.*/.test(window.location.href) == true) {
     var refreshIntervalId5 = setInterval(gensokyo5, 200);
 }
 function gensokyo6() {
-    var button = document.querySelectorAll('[onclick="declineAnalytics();"]')[0];
-    if (button != null) {
-        button.click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId6);
+    myRuns++;
+    var button = document.querySelectorAll('[onclick="declineAnalytics();"]');
+    if (button[0].length !== 0) {
+        button[0].click();
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
@@ -108,13 +103,12 @@ if (/https:\/\/xbooru\.com\/.*/.test(window.location.href) == true) {
     var refreshIntervalId6 = setInterval(gensokyo6, 200);
 }
 function gensokyo7() {
+    myRuns++;
     var button = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-    if (button != null) {
+    if (button[0].length !== 0) {
         button[0].click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId7);
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
@@ -122,13 +116,12 @@ if (/https:\/\/.*\.fandom\.com\/.*/.test(window.location.href) == true) {
     var refreshIntervalId7 = setInterval(gensokyo7, 200);
 }
 function gensokyo8() {
+    myRuns++;
     var button = document.querySelectorAll('[data-testid="reject-button"]');
-    if (button != null) {
+    if (button[0].length !== 0) {
         button[0].click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId8);
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
@@ -136,13 +129,12 @@ if (/https:\/\/www\.imdb\.com\/.*/.test(window.location.href) == true) {
     var refreshIntervalId8 = setInterval(gensokyo8, 200);
 }
 function gensokyo9() {
-    var button = document.getElementsByClassName('cookie-permission--accept-button btn is--primary is--large is--center');
-    if (button != null) {
+    myRuns++;
+    var button = document.querySelectorAll('a[class="cookie-permission--accept-button btn is--primary is--large is--center"]');
+    if (button[0].length !== 0) {
         button[0].click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId9);
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
@@ -150,13 +142,12 @@ if (/https:\/\/www\.berrybase\.de\/.*/.test(window.location.href) == true) {
     var refreshIntervalId9 = setInterval(gensokyo9, 200);
 }
 function gensokyo10() {
-    var button = document.getElementsByClassName('cc-btn cc-dismiss');
-    if (button != null) {
+    myRuns++;
+    var button = document.querySelectorAll('a[class="cc-btn cc-dismiss"]');
+    if (button[0].length !== 0) {
         button[0].click();
-        console.log("Cookie clicker active");
-        var button2 = document.querySelectorAll('div[data-tracking-opt-in-accept="true"]');
-        if (button2 != null) {
-            clearInterval(refreshIntervalId10);
+    if (myRuns > 3) {
+            clearInterval(refreshIntervalId1);
         }
     }
 }
