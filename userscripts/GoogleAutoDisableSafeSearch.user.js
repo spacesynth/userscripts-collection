@@ -7,7 +7,7 @@
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @license      WTFPL
-// @include      http*://www.google.*/*
+// @include      http*://www.google.tld/*
 // @exclude      http*://www.google.*/maps*
 // @exclude      http*://www.google.*/search*
 // @require      https://code.jquery.com/jquery-1.7.2.min.js
