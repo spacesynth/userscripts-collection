@@ -2,7 +2,7 @@
 // @name         # YouTube Fix Playback Hanging (Firefox)
 // @namespace    spsYouTubeFixPlaybackHanging
 // @description  No more fake playback is hanging nonsense
-// @version      1.0.1
+// @version      1.0.2
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -16,15 +16,9 @@
 'use strict';
 function gensokyo4() {
     var player = document.getElementById("movie_player");
-    var element1 = document.querySelector('ytd-player').getPlayer();
     if (player != null) {
         if (player.getPlayerState() == 3) {
             player.playVideo();
-        }
-    }
-    else if (element1 != undefined) {
-        if (element1.getPlayerState() == 3) {
-            element1.playVideo();
         }
     }
 }
