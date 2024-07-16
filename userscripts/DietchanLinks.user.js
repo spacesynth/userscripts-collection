@@ -2,12 +2,13 @@
 // @name         # Dietchan Links
 // @namespace    spsDietchanLinks
 // @description  Parse and tag the URIs
-// @version      1.0.1
+// @version      1.0.2
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @license      WTFPL
 // @include      *://dietchan.org/*
+// @include      *://dietchankez4ypnhpw2m2b27wdtsxw6jjckdizupysxntjslijbxubad.onion/*
 // @run-at       document-end
 // @grant        none
 // @noframes
@@ -22,7 +23,7 @@ function auaMeinArsch(element) {
 		try {
 			var myRuns = myMatch.length;
 			for (var i = 0; i < myRuns; i++) {
-				var newTxt = element.innerHTML.replace(myMatch[i], '<a href="' + myMatch[i] + '" target="_blank">' + myMatch[i] + '</a>');
+				var newTxt = element.innerHTML.replace(myMatch[i], '<a href="' + myMatch[i] + '" target="_blank" rel="noopener noreferrer">' + myMatch[i] + '</a>');
 				element.innerHTML = newTxt
 			}
 		} catch (e) {
