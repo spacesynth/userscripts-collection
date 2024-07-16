@@ -2,7 +2,7 @@
 // @name         # Dietchan Links
 // @namespace    spsDietchanLinks
 // @description  Parse and tag the URIs
-// @version      1.0.2
+// @version      1.0.3
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -15,22 +15,24 @@
 // ==/UserScript==
 
 'use strict';
+function suppressConsoleOutput(e) {
+    //we don't log here
+};
 function auaMeinArsch(element) {
 	var myExp = /https?\:\/\/[A-Za-z0-9-]{0,255}\.?[A-Za-z0-9-]{1,63}?\.[A-Za-z]{2,6}\/[A-Za-z0-9-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\;\%\=]{0,2048}/g;
 	try {
 		var myMatch = element.innerHTML.match(myExp)
-		console.log(myMatch);
 		try {
 			var myRuns = myMatch.length;
 			for (var i = 0; i < myRuns; i++) {
 				var newTxt = element.innerHTML.replace(myMatch[i], '<a href="' + myMatch[i] + '" target="_blank" rel="noopener noreferrer">' + myMatch[i] + '</a>');
-				element.innerHTML = newTxt
+				element.innerHTML = newTxt;
 			}
 		} catch (e) {
-			//exception handling is for cowards
+			suppressConsoleOutput(e);
 		}
 	} catch (e) {
-		//exception handling is for cowards
+		suppressConsoleOutput(e);
 	}
 }
 
