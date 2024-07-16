@@ -2,7 +2,7 @@
 // @name         # Dietchan Links
 // @namespace    spsDietchanLinks
 // @description  Parse and tag the URIs
-// @version      1.0.3
+// @version      1.0.4
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -18,15 +18,15 @@
 function suppressConsoleOutput(e) {
     //we don't log here
 };
-function auaMeinArsch(element) {
-	var myExp = /https?\:\/\/[A-Za-z0-9-]{0,255}\.?[A-Za-z0-9-]{1,63}?\.[A-Za-z]{2,6}\/[A-Za-z0-9-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\;\%\=]{0,2048}/g;
+function auaMeinArsch(txtDivNode) {
+	var compliantURIs = /https?\:\/\/[A-Za-z0-9-]{0,255}\.?[A-Za-z0-9-]{1,63}?\.[A-Za-z]{2,6}\/[A-Za-z0-9-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\;\%\=]{0,2048}/g;
 	try {
-		var myMatch = element.innerHTML.match(myExp)
+		var matchedURIs = txtDivNode.innerHTML.match(compliantURIs)
 		try {
-			var myRuns = myMatch.length;
-			for (var i = 0; i < myRuns; i++) {
-				var newTxt = element.innerHTML.replace(myMatch[i], '<a href="' + myMatch[i] + '" target="_blank" rel="noopener noreferrer">' + myMatch[i] + '</a>');
-				element.innerHTML = newTxt;
+			var countedMatches = matchedURIs.length;
+			for (var i = 0; i < countedMatches; i++) {
+				var newTxtDivNode = txtDivNode.innerHTML.replace(matchedURIs[i], '<a href="' + matchedURIs[i] + '" target="_blank" rel="noopener noreferrer">' + matchedURIs[i] + '</a>');
+				txtDivNode.innerHTML = newTxtDivNode;
 			}
 		} catch (e) {
 			suppressConsoleOutput(e);
@@ -36,8 +36,8 @@ function auaMeinArsch(element) {
 	}
 }
 
-function clicker(myStr) {
-	var array1 = document.querySelectorAll('div[class="text"]');
-	array1.forEach((element) => auaMeinArsch(element));
+function searchTxtDivs() {
+	var txtDivsArray = document.querySelectorAll('div[class="text"]');
+	txtDivsArray.forEach((txtDivNode) => auaMeinArsch(txtDivNode));
 }
-clicker();
+searchTxtDivs();
