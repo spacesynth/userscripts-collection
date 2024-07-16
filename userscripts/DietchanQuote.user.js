@@ -19,7 +19,7 @@ function suppressConsoleOutput(e) {
     //we don't log here
 };
 var script = document.createElement("script");
-script.innerHTML = "function quote(postID) {\n var replyBox = document.querySelectorAll(\'textarea[name=\"text2\"]\');\n var selectedTxt = window.getSelection().toString()\n var populateBox = replyBox[0].value=replyBox[0].value + \">>\" + postID + \"\\n\" + selectedTxt + \"\\n\";\n\n}";
+script.innerHTML = "function quote(postID) {\n var replyBox = document.querySelectorAll(\'textarea[name=\"text2\"]\');\n var selectedTxt = window.getSelection().toString()\n var populateBox = replyBox[0].value=replyBox[0].value + \">>\" + postID + \"\\n\" + \">\" + selectedTxt + \"\\n\";\n\n}";
 function auaMeinArsch(postIDnode) {
 	var matchPostID = /[0-9]{5,6}/g;
 	try {
