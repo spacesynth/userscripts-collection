@@ -2,7 +2,7 @@
 // @name         # Dietchan Links
 // @namespace    spsDietchanLinks
 // @description  Parse and tag the URIs
-// @version      1.0.0
+// @version      1.0.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -20,8 +20,11 @@ function auaMeinArsch(element) {
 		var myMatch = element.innerHTML.match(myExp)
 		console.log(myMatch);
 		try {
-			var newTxt = element.innerHTML.replace(myExp, '<a href="' + myMatch[0] + '" target="_blank">' + myMatch[0] + '</a>');
-			element.innerHTML = newTxt
+			var myRuns = myMatch.length;
+			for (var i = 0; i < myRuns; i++) {
+				var newTxt = element.innerHTML.replace(myMatch[i], '<a href="' + myMatch[i] + '" target="_blank">' + myMatch[i] + '</a>');
+				element.innerHTML = newTxt
+			}
 		} catch (e) {
 			//exception handling is for cowards
 		}
@@ -29,6 +32,7 @@ function auaMeinArsch(element) {
 		//exception handling is for cowards
 	}
 }
+
 function clicker(myStr) {
 	var array1 = document.querySelectorAll('div[class="text"]');
 	array1.forEach((element) => auaMeinArsch(element));
