@@ -7,6 +7,9 @@ user_pref("privacy.clearOnShutdown_v2.siteSettings", true);
 user_pref("privacy.history.custom", true);
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 
+// Less risk of memory leaks
+user_pref("accessibility.force_disabled", 1);
+
 // Privacy
 user_pref("browser.sessionstore.resume_from_crash", false);
 
