@@ -2,14 +2,12 @@
 // @name         # YouTube No Autoplay (Channel)
 // @namespace    spsYouTubeNoAutoplayChannel
 // @description  No autoplay on channels
-// @version      1.0.4
+// @version      1.0.6
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @license      WTFPL
-// @match        *://*.youtube.com/channel*
-// @match        *://*.youtube.com/@*
-// @exclude      *://*.youtube.com/watch*
+// @match        *://*.youtube.com/*
 // @run-at       document-start
 // @grant        none
 // @noframes
