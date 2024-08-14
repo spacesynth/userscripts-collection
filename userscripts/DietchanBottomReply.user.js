@@ -2,7 +2,7 @@
 // @name         # Dietchan Bottom Reply
 // @namespace    spsDietchanBottomReply
 // @description  Reply box at the bottom
-// @version      1.0.0
+// @version      1.0.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 'use strict';
-$("body").append (`<form class='reply' action='/post' method='post' enctype='multipart/form-data' novalidate autocomplete='on'> \
+$("body").append (`<form class='reply' action='/post' method='post' enctype='multipart/form-data' novalidate autocomplete='on'>
 <table><tr><th colspan='3'><h3>Antwort erstellen</h3></th></tr><tr><th><label for='sage'>Säge</label>
 </th><td colspan='2'><input type='checkbox' name='sage' value='1'></td></tr><tr><th>
 <label for='subject'>Betreff</label></th><td><input name='subject' type='text'></td><td width='1'>
@@ -33,8 +33,7 @@ $("body").append (`<form class='reply' action='/post' method='post' enctype='mul
 <input name='thread' id='duplicatebox' value='' type='hidden'></form>`);
 
 (function() {
-var box1 = document.querySelectorAll('input[name="thread"]')[0].value;
+var box1 = document.querySelectorAll('input[name="thread"]')[0];
 var box2 = document.querySelectorAll('input[id="duplicatebox"]')[0];
-box2.value = box1;
-//box2.setAttribute('value', box1);
+box2.value = box1.value;
 })();
