@@ -2,7 +2,7 @@
 // @name         # ComputerBase Dark Mode
 // @namespace    spsComputerBaseDarkMode
 // @description  Automatically turn on dark mode on CB
-// @version      1.0.0
+// @version      1.0.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
