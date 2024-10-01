@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.0.3
+// @version      1.0.4
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -19,6 +19,7 @@
 // @match        https://*.fandom.com/*
 // @match        https://www.berrybase.de/*
 // @match        https://clonezilla.org/*
+// @match        https://consent.youtube.com/*
 // @run-at       document-idle
 // @grant        none
 // @noframes
@@ -73,4 +74,7 @@ if (/https\:\/\/hackaday\.io\/.*/.test(window.location.href) == true) {
 }
 if (/https\:\/\/www\.regex\-escape\.com\/.*/.test(window.location.href) == true) {
     clicker('button[on="tap:consent-element.reject"]');
+}
+if (/https\:\/\/consent\.youtube\.com\/.*/.test(window.location.href) == true) {
+    clicker('button[aria-label="Reject all"]');
 }
