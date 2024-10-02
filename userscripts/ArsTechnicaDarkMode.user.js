@@ -2,7 +2,7 @@
 // @name         # ArsTechnica Dark Mode
 // @namespace    spsArsTechnicaDarkMode
 // @description  Automatically turn on dark mode on Ars
-// @version      1.0.0
+// @version      1.0.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -15,8 +15,8 @@
 
 (function() {
 'use strict';
-if (document.cookie.includes('theme=dark') == false){
-    document.cookie = "theme=dark; path=/";
+if (document.cookie.includes('xf_style_id=5') == false){
+    document.cookie = "xf_style_id=5; path=/";
     location.reload();
     console.log("this only runs once per session");
 }})();
