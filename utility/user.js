@@ -19,6 +19,7 @@ user_pref("cookiebanners.service.mode.privateBrowsing", 2);
 
 // UI
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("browser.compactmode.show", true);
 user_pref("browser.uidensity", 1);
 
 // UX
