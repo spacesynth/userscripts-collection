@@ -2,7 +2,7 @@
 // @name         # Reddit Old Design Please
 // @namespace    spsRedditOldDesignPlease
 // @description  Predditors are no longer winning
-// @version      1.1.1
+// @version      1.1.2
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -15,12 +15,15 @@
 
 'use strict';
 function fixPredditURIs() {
+    var sanitzedURI;
     var loc = window.location.href.toString();
     var myCaptureGroup1 = loc.match(/https:\/\/www\.reddit\.com\/(.*\/comments\/.*)/);
     var myCaptureGroup2 = loc.match(/https:\/\/old\.reddit\.com\/(.*)/);
     if (myCaptureGroup1 !== null) {
         if (/https:\/\/www\.reddit\.com\/(.*\/comments\/.*)/.test(window.location.href) === true) {
-            window.open("https://old.reddit.com/" + decodeURIComponent(myCaptureGroup1[1]), "_self");
+            //do not translate pages with AI
+            sanitzedURI = myCaptureGroup1[1].replace(/\?tl=[a-z]{2}/, '');
+            window.open("https://old.reddit.com/" + decodeURIComponent(sanitzedURI), "_self");
         }
     }
     else if (myCaptureGroup2 !== null) {
