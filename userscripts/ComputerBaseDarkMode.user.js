@@ -2,7 +2,7 @@
 // @name         # ComputerBase Dark Mode
 // @namespace    spsComputerBaseDarkMode
 // @description  Automatically turn on dark mode on CB
-// @version      1.0.1
+// @version      1.0.2
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -18,7 +18,7 @@
 'use strict';
 function cookieMaker() {
     if (document.cookie.includes('xf_style_variation=alternate') == false) {
-        var a = "xf_style_variation=alternate; no-fixed-header=1; consent=0; desktop-layout=1";
+        var a = "xf_style_variation=alternate; no-fixed-header=1; consent=0; desktop-layout=1; home-layout=2";
         var b = a.split(";");
         for (var c = 0; c < b.length; c++) {
             document.cookie = b[c] + "; path=/";
