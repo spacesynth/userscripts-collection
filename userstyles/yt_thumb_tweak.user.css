@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Youtube Small Thumbnails - Normal Size Style
 @namespace    YoutubeSmallThumbnailsStyle
-@version      1.0.1
+@version      1.0.2
 ==/UserStyle== */
 
 @-moz-document domain('youtube.com') {
@@ -19,5 +19,9 @@
 }
 #dismissible.ytd-video-renderer {
     width: fit-content !important;
+}
+.yt-lockup-view-model-wiz--horizontal .yt-lockup-view-model-wiz__content-image {
+    max-width: 246px;
+    min-width: 240px;
 }
 }
