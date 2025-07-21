@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.0.7
+// @version      1.0.8
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -18,6 +18,7 @@
 // @match        https://www.imdb.com/*
 // @match        https://*.fandom.com/*
 // @match        https://*.sparda-hessen.de/*
+// @match        https://*.bing.com/*
 // @match        https://*.google.com/*
 // @match        https://*.youtube.com/*
 // @match        https://www.berrybase.de/*
@@ -92,4 +93,7 @@ if (/https\:\/\/consent\.google\.com\/.*/.test(window.location.href) == true) {
 }
 if (/https\:\/\/www\.sparda\-hessen\.de\/.*/.test(window.location.href) == true) {
     clicker('button[id="onetrust-reject-all-handler"]');
+}
+if (/https\:\/\/www\.bing\.com\/.*/.test(window.location.href) == true) {
+    clicker('div[id="bnp_btn_reject"]');
 }
