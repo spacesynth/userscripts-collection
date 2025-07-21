@@ -2,7 +2,7 @@
 // @name         # YouTube No Miniplayer + Cookie refuser
 // @namespace    spsYouTubeNoMiniplayer
 // @description  No miniplayer on YouTube
-// @version      1.0.5
+// @version      1.0.6
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -24,12 +24,16 @@ function clicker() {
         }
     }
 }
+var myRuns = 0;
 function gensokyo() {
-    var element1 = document.querySelector('button[aria-label="Reject the use of cookies and other data for the purposes described"]');
-    if (element1 != undefined) {
-        element1.click();
+    myRuns++;
+    if (myRuns < 4) {
+        var element1 = document.querySelector('button[aria-label="Reject the use of cookies and other data for the purposes described"]');
+        if (element1 != undefined) {
+            element1.click();
+        }
+        return true;
     }
-    return true;
 }
 waitForKeyElements('button[aria-label="Reject the use of cookies and other data for the purposes described"]', gensokyo);
 var refreshIntervalId4 = setInterval(clicker, 400);
