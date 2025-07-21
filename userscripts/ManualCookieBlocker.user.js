@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.1.0
+// @version      1.1.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -19,6 +19,7 @@
 // @match        https://*.fandom.com/*
 // @match        https://*.sparda-hessen.de/*
 // @match        https://gtaweb.eu/*
+// @match        https://x.com/*
 // @match        https://*.bing.com/*
 // @match        https://*.google.com/*
 // @match        https://*.youtube.com/*
@@ -112,4 +113,7 @@ if (/https\:\/\/www\.bing\.com\/.*/.test(window.location.href) == true) {
 }
 if (/https\:\/\/gtaweb\.eu\/.*/.test(window.location.href) == true) {
     innerClicker('button[class="ui-button ui-corner-all ui-widget"]', 'ACCEPT ESSENTIAL ONLY');
+}
+if (/https\:\/\/x\.com\/.*/.test(window.location.href) == true) {
+    innerClicker('span[class^="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"]', 'Refuse non-essential cookies');
 }
