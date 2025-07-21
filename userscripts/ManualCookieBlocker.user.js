@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.0.9
+// @version      1.1.0
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -18,6 +18,7 @@
 // @match        https://www.imdb.com/*
 // @match        https://*.fandom.com/*
 // @match        https://*.sparda-hessen.de/*
+// @match        https://gtaweb.eu/*
 // @match        https://*.bing.com/*
 // @match        https://*.google.com/*
 // @match        https://*.youtube.com/*
@@ -39,6 +40,19 @@ function clicker(myStr) {
     if (myRuns < 4) {
         setTimeout(() => {
             clicker(myStr);
+        }, 400);
+    }
+}
+var myRunsInner = 0;
+function innerClicker(myStrOuter, innerStr) {
+    myRunsInner++;
+    var buttonInner = Array.from(document.querySelectorAll(myStrOuter)).find(el => el.textContent === innerStr);
+    if (typeof buttonInner !== 'undefined') {
+        buttonInner.click();
+    }
+    if (myRunsInner < 4) {
+        setTimeout(() => {
+            innerClicker(myStrOuter, innerStr);
         }, 400);
     }
 }
@@ -95,4 +109,7 @@ if (/https\:\/\/www\.sparda\-hessen\.de\/.*/.test(window.location.href) == true)
 }
 if (/https\:\/\/www\.bing\.com\/.*/.test(window.location.href) == true) {
     clicker('div[id="bnp_btn_reject"]');
+}
+if (/https\:\/\/gtaweb\.eu\/.*/.test(window.location.href) == true) {
+    innerClicker('button[class="ui-button ui-corner-all ui-widget"]', 'ACCEPT ESSENTIAL ONLY');
 }
