@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.0.4
+// @version      1.0.5
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -17,6 +17,8 @@
 // @match        https://xbooru.com/*
 // @match        https://www.imdb.com/*
 // @match        https://*.fandom.com/*
+// @match        https://*.google.com/*
+// @match        https://*.youtube.com/*
 // @match        https://www.berrybase.de/*
 // @match        https://clonezilla.org/*
 // @match        https://consent.youtube.com/*
@@ -76,5 +78,14 @@ if (/https\:\/\/www\.regex\-escape\.com\/.*/.test(window.location.href) == true)
     clicker('button[on="tap:consent-element.reject"]');
 }
 if (/https\:\/\/consent\.youtube\.com\/.*/.test(window.location.href) == true) {
+    clicker('button[aria-label="Reject all"]');
+}
+if (/https\:\/\/www\.google\.com\/.*/.test(window.location.href) == true) {
+    clicker('div[class="QS5gu sy4vM"]');
+}
+if (/https\:\/\/www\.youtube\.com\/.*/.test(window.location.href) == true) {
+    clicker('button[aria-label="Reject the use of cookies and other data for the purposes described"]');
+}
+if (/https\:\/\/consent\.google\.com\/.*/.test(window.location.href) == true) {
     clicker('button[aria-label="Reject all"]');
 }
