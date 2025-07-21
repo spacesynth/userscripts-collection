@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.0.8
+// @version      1.0.9
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -23,7 +23,6 @@
 // @match        https://*.youtube.com/*
 // @match        https://www.berrybase.de/*
 // @match        https://clonezilla.org/*
-// @match        https://consent.youtube.com/*
 // @run-at       document-idle
 // @grant        none
 // @noframes
@@ -53,7 +52,7 @@ if (/https\:\/\/www\.edeka\.de\/.*/.test(window.location.href) == true) {
     clicker('button[id="popin_tc_privacy_button_2"]');
 }
 if (/https\:\/\/rule34\.xxx\/.*/.test(window.location.href) == true) {
-    clicker('a[onclick="declineAnalytics();"]');
+    clicker('button[onclick="acceptGDPR();"]');
 }
 if (/https\:\/\/rule34\.paheal\.net\/.*/.test(window.location.href) == true) {
     clicker('a[onclick="tnc_agree();"]');
