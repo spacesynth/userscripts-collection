@@ -8,6 +8,7 @@
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @license      WTFPL
 // @include      *://*.google.tld/search*
+// @exclude      *://developers.google.tld/search*
 // @require      https://code.jquery.com/jquery-1.7.2.min.js
 // @require      https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/waitForKeyElements.js
 // @run-at       document-start
