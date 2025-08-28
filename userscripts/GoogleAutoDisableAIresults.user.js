@@ -2,7 +2,7 @@
 // @name         # Google Auto Disable AI results
 // @namespace    spsGoogleAutoDisableAIresults
 // @description  Screw AI tech bro babble
-// @version      1.0.0
+// @version      1.0.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
