@@ -2,7 +2,7 @@
 // @name         # Google Auto Disable SafeSearch
 // @namespace    spsGoogleAutoDisableSafeSearch
 // @description  Screw Safe Search
-// @version      1.0.3
+// @version      1.0.4
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
