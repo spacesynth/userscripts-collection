@@ -2,7 +2,7 @@
 // @name         # Manual Cookie Blocker
 // @namespace    spsManualCookieBlocker
 // @description  Lot's of sites missing in Firefox's native blocker and I still don't care about cookies
-// @version      1.1.3
+// @version      1.1.4
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
@@ -26,6 +26,7 @@
 // @match        https://*.youtube.com/*
 // @match        https://www.berrybase.de/*
 // @match        https://www.sciencedirect.com/*
+// @match        https://bugzilla.mozilla.org/*
 // @match        https://clonezilla.org/*
 // @run-at       document-idle
 // @grant        none
@@ -124,4 +125,7 @@ if (/https\:\/\/dynv6\.com\/.*/.test(window.location.href) == true) {
 }
 if (/https\:\/\/www\.sciencedirect\.com\/.*/.test(window.location.href) == true) {
     clicker('button[id="onetrust-accept-btn-handler"]');
+}
+if (/https\:\/\/bugzilla\.mozilla\.org\/.*/.test(window.location.href) == true) {
+    clicker('button[id="moz-consent-banner-button-reject"]');
 }
