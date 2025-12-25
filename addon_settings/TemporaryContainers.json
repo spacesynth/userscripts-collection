@@ -1,0 +1,101 @@
+{
+  "version": "1.9.2",
+  "date": 1691829400035,
+  "preferences": {
+    "automaticMode": {
+      "active": true,
+      "newTab": "created"
+    },
+    "notifications": false,
+    "container": {
+      "namePrefix": "tmp",
+      "color": "purple",
+      "colorRandom": true,
+      "icon": "circle",
+      "iconRandom": false,
+      "numberMode": "keepuntilrestart",
+      "removal": 120000,
+      "colorRandomExcluded": [],
+      "iconRandomExcluded": []
+    },
+    "iconColor": "default",
+    "isolation": {
+      "global": {
+        "navigation": {
+          "action": "never"
+        },
+        "mouseClick": {
+          "middle": {
+            "action": "never",
+            "container": "default"
+          },
+          "ctrlleft": {
+            "action": "never",
+            "container": "default"
+          },
+          "left": {
+            "action": "never",
+            "container": "default"
+          }
+        },
+        "excluded": {},
+        "excludedContainers": []
+      },
+      "domain": [],
+      "mac": {
+        "action": "disabled"
+      },
+      "reactivateDelay": 0
+    },
+    "browserActionPopup": false,
+    "pageAction": false,
+    "contextMenu": true,
+    "keyboardShortcuts": {
+      "AltC": false,
+      "AltP": false,
+      "AltN": true,
+      "AltShiftC": false,
+      "AltX": false,
+      "AltO": false,
+      "AltI": false
+    },
+    "replaceTabs": false,
+    "cookies": {
+      "domain": {}
+    },
+    "deletesHistory": {
+      "automaticMode": "never",
+      "contextMenu": false,
+      "containerAlwaysPerDomain": "never",
+      "containerIsolation": "never",
+      "containerRemoval": 0,
+      "containerMouseClicks": "never",
+      "statistics": false,
+      "active": false,
+      "contextMenuBookmarks": false
+    },
+    "statistics": true,
+    "closeRedirectorTabs": {
+      "active": false,
+      "delay": 2000,
+      "domains": [
+        "t.co",
+        "outgoing.prod.mozaws.net",
+        "slack-redir.net"
+      ]
+    },
+    "contextMenuBookmarks": false,
+    "ignoreRequests": [
+      "getpocket.com",
+      "addons.mozilla.org"
+    ],
+    "ui": {
+      "expandPreferences": false,
+      "popupDefaultTab": "isolation-global"
+    },
+    "scripts": {
+      "domain": {},
+      "active": false
+    }
+  }
+}

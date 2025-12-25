@@ -1,0 +1,75 @@
+/* ==UserStyle==
+@name         Wildschweinaugen Nachtmodus
+@namespace    OinkOinkNacht
+@version      1.0.1
+==/UserStyle== */
+@-moz-document domain("dietchan.org") {
+/*Entwicklungsfaden:
+https://dietchan.org/meta/105424
+*/
+h1, h3, span.quote, span.qdeco, span.username {
+    color: #32DD72;
+}
+body {
+    background-color: #282828;
+    color: #999;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.subject {
+    color: #446655;
+    font-weight: 800;
+    font-size: 18px;
+}
+.page.current {
+    color: white;
+    text-decoration: underline;
+}
+.post {
+	background: #333;
+	border: #555 1px solid;
+}
+.post.first { 
+    background: none !important;
+    border: none !important;
+}
+.post:target {
+    background: #555 !important;
+    border: transparent 1px solid !important;
+    outline: none !important;
+}
+.post-wrapper { padding-top: 5px;}
+a:link, a:visited { 
+    color: lightgrey;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    font-family: sans-serif;
+    text-decoration: underline;
+}
+form.reply input[type="submit"] {
+    background: #333;
+    border: #888 1px solid;
+    color: lightgray;
+}
+form.reply input[type="submit"]:hover {
+	background: #555;
+	border: #888 1px solid;
+	color: #32DD72;
+}
+form.reply textarea,
+form.reply input[type="text"],
+form.reply input[type="file"],
+form.reply input[type="password"],
+form input[type="password"],
+form.reply select {
+    background: #333;
+    color: lightgrey;
+    border: #666 1px solid;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+}

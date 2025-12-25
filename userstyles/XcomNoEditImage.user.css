@@ -1,0 +1,11 @@
+/* ==UserStyle==
+@name         X com No Edit Image Button
+@namespace    XcomNoEditImage
+@version      1.0.1
+==/UserStyle== */
+
+@-moz-document domain('x.com') {
+[href^="/i/imagine"] {
+  display: none !important;
+}
+}

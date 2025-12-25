@@ -1,0 +1,11 @@
+/* ==UserStyle==
+@name         Mediathek No Backdrop
+@namespace    MediathekNoBackdrop
+@version      1.0.0
+==/UserStyle== */
+
+@-moz-document domain('ardmediathek.de') {
+.ardplayer {
+    --ardplayer-color-ui-background-shim: rgba(0, 0, 0, 0.0) !important;
+}
+}
