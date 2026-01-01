@@ -1,0 +1,17 @@
+/* ==UserStyle==
+@name         ComputerBase Better Ticker
+@namespace    ComputerBaseBetterTicker
+@version      1.0.0
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.computerbase.de/news/") {
+a {
+  color: #b1b1b1 !important;
+}
+.ticker__date {
+  color: #e84d0e !important;
+}
+.ticker {
+  font-size: 15px !important;
+}
+}
