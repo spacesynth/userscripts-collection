@@ -1,16 +1,16 @@
 /* ==UserStyle==
 @name         Default Google Logo
 @namespace    DefaultGoogleLogo
-@version      1.0.1
+@version      1.0.2
 ==/UserStyle== */
 
 @-moz-document domain('google.com') {
 svg.lnXdpd, img.lnXdpd {
   width: 0px !important;
   height: 0px !important;
-  padding-top: 174px !important; 
+  padding-top: 100px !important;
   padding-left: 450px !important;
-  background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png') no-repeat center !important; 
+  background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png') no-repeat center !important;
   background-size: 272px 92px !important;
   user-select: none !important;
   pointer-events: none !important;
