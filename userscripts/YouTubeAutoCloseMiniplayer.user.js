@@ -2,14 +2,14 @@
 // @name         # YouTube Auto Close Miniplayer
 // @namespace    spsYouTubeAutoCloseMiniplayer
 // @description  Check if the autoplay crap sneaked back in
-// @version      1.0.0
+// @version      1.0.1
 // @author       spacesynth
 // @supportURL   https://github.com/spacesynth/userscripts-collection
 // @icon         https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/icon.png
 // @require      https://code.jquery.com/jquery-1.7.2.min.js
 // @require      https://raw.githubusercontent.com/spacesynth/userscripts-collection/master/utility/waitForKeyElements.js
 // @license      WTFPL
-// @match        *://*.youtube.com/results*
+// @match        *://*.youtube.com/*
 // @run-at       document-idle
 // @noframes
 // ==/UserScript==
