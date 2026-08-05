@@ -1,0 +1,8 @@
+.scripttable td,
+.scripttable th {
+	display: table-cell;
+	margin: 5px;
+	padding: 1px;
+	text-align: center;
+	height: 2em;
+}
