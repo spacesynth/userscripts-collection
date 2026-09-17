@@ -6,7 +6,7 @@ Please try if this userscript disables autoplay even after page navigation:
 https://greasyfork.org/en/scripts/549444-youtube-no-autoplay  
 
 ### Removal of Old Reddit script
-Working altternative: 
+Working altternative:  
 https://greasyfork.org/en/scripts/569062-default-to-force-old-reddit-on-www-reddit-com  
 
 ### Removal of small thumbnail script
