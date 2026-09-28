@@ -1,0 +1,38 @@
+/* ==UserStyle==
+@name         FritzBox Slim
+@namespace    FritzBoxSlim
+@version      1.0.0
+==/UserStyle== */
+
+@-moz-document domain('10.0.0.1'), domain('10.0.0.4'), domain('10.0.0.12') {
+html {
+    font-size: 13px !important;
+}
+
+html,
+input,
+textarea,
+keygen,
+select,
+button {
+    font-family: Arial, sans-serif !important;
+}
+
+main tr,
+main th,
+main td {
+    font-size: 0.98rem !important;
+}
+
+.list .item {
+    font-size: 98% !important;
+}
+
+.row div.net div.row {
+    font-size: 98% !important;
+}
+
+.row div.comfort div.row {
+    font-size: 98% !important;
+}
+}
