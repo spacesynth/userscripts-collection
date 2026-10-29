@@ -1,0 +1,32 @@
+/* ==UserStyle==
+@name         Youtube Small Thumbnails - Normal Size Style
+@namespace    YoutubeSmallThumbnailsStyle
+@version      1.0.4
+==/UserStyle== */
+
+@-moz-document domain('youtube.com') {
+#avatar-link {
+    display: none;
+}
+#video-title {
+    font-size: 1.4rem !important;
+}
+#channel-name.ytd-video-meta-block {
+    font-size: 1.3rem !important;
+}
+#metadata-line {
+    font-size: 1.3rem !important;
+}
+#dismissible.ytd-video-renderer {
+    width: fit-content !important;
+}
+.yt-lockup-view-model-wiz--horizontal .yt-lockup-view-model-wiz__content-image {
+    max-width: 240px !important;
+}
+yt-lockup-view-model .ytd-watch-next-secondary-results-renderer {
+    max-width: 240px !important;
+}
+yt-lockup-view-model .yt-lockup-view-model__content-image {
+    max-width: 240px !important;
+}
+}

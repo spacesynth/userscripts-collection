@@ -1,0 +1,22 @@
+/* ==UserStyle==
+@name         Ketuvia subtitle tweak
+@namespace    KetuviaSubtitleTweak
+@version      1.0.3
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/watch") {
+#rechunk-overlay {
+  color: #ffff00 !important;
+  background: rgba(0, 0, 0, 0) !important;
+  -webkit-text-stroke: 4px black !important;
+  paint-order: stroke fill !important;
+  font-size: 3.5em !important;
+  width: 1000px !important;
+  --rechunk-font-family: "Roboto", system-ui, sans-serif !important;
+  --rechunk-font-size: 20px !important;
+}
+#rechunk-measurer {
+  --rechunk-font-family: "Roboto", system-ui, sans-serif !important;
+  --rechunk-font-size: 20px !important;
+}
+}
